@@ -27,8 +27,10 @@ def listar_usuarios():
     for usuario in usuarios:
         print(f"Nome: {usuario['nome']} | Idade: {usuario['idade']}")
 
-def buscar(nome):
-    for u in usuarios:
-        if u == nome:
-            return True
-    return False
+def buscar_usuarios(nome):
+    nome = nome.strip()
+
+    for usuario in usuarios:
+        if usuario["nome"].casefold() == nome.casefold():
+            return usuario
+    return None
