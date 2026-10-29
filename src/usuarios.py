@@ -19,9 +19,13 @@ def cadastrar_usuario(nome, idade):
     print("Usuário cadastrado com sucesso!")
     return True
 
-def listar():
-    for i in range(len(usuarios)):
-        print("Usuário:", usuarios[i])
+def listar_usuarios():
+    if not usuarios:
+        print("Nenhum usuário cadastrado.")
+        return
+
+    for usuario in usuarios:
+        print(f"Nome: {usuario['nome']} | Idade: {usuario['idade']}")
 
 def buscar(nome):
     for u in usuarios:
